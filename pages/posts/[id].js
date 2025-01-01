@@ -3,6 +3,7 @@ import Layout from "../../components/layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
+import parse from "html-react-parser";
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -33,8 +34,7 @@ export default function Post({ postData }) {
         <div className={utilStyles.lightText}>
           <Date dateString={postData.date} />
         </div>
-        {/* TODO: See if there's a better way to do this */}
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div>{parse(postData.contentHtml)}</div>
       </article>
     </Layout>
   );
