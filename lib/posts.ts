@@ -6,6 +6,12 @@ import html from "remark-html";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
+type PostData = {
+  id: string;
+  title: string;
+  date: string;
+};
+
 export function getSortedPostsData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
@@ -24,7 +30,7 @@ export function getSortedPostsData() {
     return {
       id,
       ...matterResult.data,
-    };
+    } as PostData;
   });
   // Sort posts by date
   return allPostsData.sort((a, b) => {
