@@ -5,6 +5,18 @@ import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
 import parse from "html-react-parser";
 
+// Static Site Generation with Data and Dynamic Routes
+
+// Return a list of possible [id] values for dynamic routing
+export async function getStaticPaths() {
+  const paths = getAllPostIds();
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+// Uses what's returned from getStaticPaths to get the data for each blog post
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
   return {
@@ -14,16 +26,12 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export async function getStaticPaths() {
-  // Return a list of possible value for id
-  const paths = getAllPostIds();
-  return {
-    paths,
-    fallback: false,
-  };
-}
+type PostProps = {
+  postData: PostData;
+};
 
-export default function Post({ postData }) {
+// Uses what's returned from getStaticProps to render the blog post page
+export default function Post({ postData }: PostProps) {
   return (
     <Layout>
       <Head>

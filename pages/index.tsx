@@ -15,7 +15,11 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ allPostsData }) {
+type HomeProps = {
+  allPostsData: PostData[];
+};
+
+export default function Home({ allPostsData }: HomeProps) {
   return (
     <Layout home>
       <Head>
@@ -23,8 +27,8 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          Welcome to my digtal diary! I'm a Scientist turned Software Engineer
-          by day, and an extrovert turned introvert by night.{" "}
+          Welcome to my digtal diary! I&apos;m a Scientist turned Software
+          Engineer by day, and an extrovert turned introvert by night.{" "}
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
