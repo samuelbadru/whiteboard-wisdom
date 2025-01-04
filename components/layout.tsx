@@ -5,7 +5,6 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import { ReactNode } from "react";
 
-const name = "Samuel Badru";
 export const siteTitle = "Whiteboard Wisdom";
 
 type LayoutProps = {
@@ -36,20 +35,20 @@ export default function Layout({ children, home }: LayoutProps) {
           <>
             <Image
               priority
-              src="/images/profile.jpg"
+              src="/images/profile.png"
               className={utilStyles.borderCircle}
               height={144}
               width={144}
               alt=""
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={utilStyles.heading2Xl}>{siteTitle}</h1>
           </>
         ) : (
           <>
             <Link href="/">
               <Image
                 priority
-                src="/images/profile.jpg"
+                src="/images/profile.png"
                 className={utilStyles.borderCircle}
                 height={108}
                 width={108}
@@ -58,7 +57,7 @@ export default function Layout({ children, home }: LayoutProps) {
             </Link>
             <h2 className={utilStyles.headingLg}>
               <Link href="/" className={utilStyles.colorInherit}>
-                {name}
+                {siteTitle}
               </Link>
             </h2>
           </>
