@@ -4,11 +4,12 @@ import "../styles/global.css";
 import { Metadata } from "next";
 import styles from "./layout.module.css";
 import { ReactNode } from "react";
-import { siteDescription, siteTitle } from "../lib/constants";
+import { SITE_DOMAIN, siteDescription, siteTitle } from "../lib/constants";
 
 export const metadata: Metadata = {
   title: siteTitle,
   description: siteDescription,
+  robots: SITE_DOMAIN,
   icons: {
     icon: "/favicon.ico",
   },
