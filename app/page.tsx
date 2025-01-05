@@ -1,30 +1,22 @@
-import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
+// import Head from "next/head";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
+import RootLayout from "./layout";
 
-export async function getStaticProps() {
+export async function generateAllPostData() {
   // Get external data from the file system, API, DB, etc.
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
+  return getSortedPostsData();
 }
 
-type HomeProps = {
-  allPostsData: PostData[];
-};
-
-export default function Home({ allPostsData }: HomeProps) {
+export default async function Home() {
+  const allPostData = await generateAllPostData();
   return (
-    <Layout home>
-      <Head>
+    <RootLayout home>
+      {/* <Head>
         <title>{siteTitle}</title>
-      </Head>
+      </Head> */}
       <section className={utilStyles.headingMd}>
         <p>
           Welcome to my digtal diary! I&apos;m a Scientist turned Software
@@ -34,7 +26,7 @@ export default function Home({ allPostsData }: HomeProps) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
+          {allPostData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
               <Link href={`/posts/${id}`}>{title}</Link>
               <br />
@@ -45,6 +37,6 @@ export default function Home({ allPostsData }: HomeProps) {
           ))}
         </ul>
       </section>
-    </Layout>
+    </RootLayout>
   );
 }
