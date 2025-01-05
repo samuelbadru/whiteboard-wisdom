@@ -9,7 +9,8 @@ import RootLayout from "../../layout";
 
 // Used by the Post component to get the data for each blog post
 export async function generatePostData(params: { id: string }) {
-  return (await getPostData(params.id)) as PostData;
+  const postData = await getPostData(params.id);
+  return postData;
 }
 
 // Return a list of possible [id] values for dynamic routing to the Post component
