@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
         has: [
           {
             type: "host",
-            value: "www.mywisdomboard.com",
+            value: "mywisdomboard.com",
           },
         ],
         destination: `${SITE_DOMAIN}/:path*`,
