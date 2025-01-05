@@ -2,9 +2,6 @@ import { getAllPostIds, getPostData } from "../../../lib/posts";
 import Date from "../../../components/date";
 import utilStyles from "../../../styles/utils.module.css";
 import parse from "html-react-parser";
-import { SITE_DOMAIN } from "../../../lib/constants";
-
-// import RootLayout from "../../layout";
 
 // Static Site Generation with Data and Dynamic Routes
 
@@ -30,7 +27,6 @@ export default async function Post(props: PostProps) {
     <>
       <header>
         <title>{postData.title}</title>
-        <link rel="canonical" href={`${SITE_DOMAIN}/${postData.id}`} />
       </header>
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>

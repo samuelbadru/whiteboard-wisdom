@@ -7,9 +7,12 @@ import { ReactNode } from "react";
 import { SITE_DOMAIN, siteDescription, siteTitle } from "../lib/constants";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_DOMAIN),
+  alternates: {
+    canonical: "./",
+  },
   title: siteTitle,
   description: siteDescription,
-  robots: SITE_DOMAIN,
   icons: {
     icon: "/favicon.ico",
   },
