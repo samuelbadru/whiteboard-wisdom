@@ -33,7 +33,7 @@ export async function GET() {
   // We return the sitemap as a response
   return NextResponse.json(sitemap, {
     headers: {
-      "Content-Type": "application/xml",
+      "Content-Type": "text/xml",
     },
   });
 }
