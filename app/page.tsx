@@ -19,20 +19,22 @@ export default async function Home() {
           priority
           src="/images/profile.png"
           className={utilStyles.borderCircle}
-          height={144}
-          width={144}
-          alt=""
+          height={220}
+          width={165}
+          alt="Profile"
         />
         <h1 className={utilStyles.heading2Xl}>{siteTitle}</h1>
       </header>
       <section className={utilStyles.headingMd}>
         <p>
-          Welcome to my digtal diary! Whiteboard wisdom is a home for my
-          continually evolving life learnings. Feel free to snoop around and see
-          if anything resonates with your life journey. Send me an{" "}
-          <Link href={"mailto:mywisdomboard@gmail.com"}>email</Link> if you want
-          to chat.
+          Welcome to Whiteboard Wisdom! This blog is home to my ever-evolving
+          life lessons that can easily read, shared, and wiped away to make
+          space for new learnings. Feel free to snoop around and see if anything
+          resonates with your life journey. Send me an{" "}
+          <Link href={"mailto:mywisdomboard@gmail.com"}>email</Link> if you have
+          any to share 📧
         </p>
+        <p></p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
