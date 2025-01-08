@@ -1,4 +1,3 @@
-// import Head from "next/head";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
@@ -6,10 +5,8 @@ import Date from "../components/date";
 import styles from "./layout.module.css";
 import Image from "next/image";
 import { siteTitle } from "../lib/constants";
-// import RootLayout from "./layout";
 
 async function generateAllPostData() {
-  // Get external data from the file system, API, DB, etc.
   return getSortedPostsData();
 }
 
@@ -17,9 +14,6 @@ export default async function Home() {
   const allPostData = await generateAllPostData();
   return (
     <>
-      {/* <Head>
-        <title>{siteTitle}</title>
-      </Head> */}
       <header className={styles.header}>
         <Image
           priority
@@ -33,8 +27,11 @@ export default async function Home() {
       </header>
       <section className={utilStyles.headingMd}>
         <p>
-          Welcome to my digtal diary! I&apos;m a Scientist turned Software
-          Engineer by day, and an extrovert turned introvert by night.{" "}
+          Welcome to my digtal diary! Whiteboard wisdom is a home for my
+          continually evolving life learnings. Feel free to snoop around and see
+          if anything resonates with your life journey. Send me an{" "}
+          <Link href={"mailto:mywisdomboard@gmail.com"}>email</Link> if you want
+          to chat.
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
