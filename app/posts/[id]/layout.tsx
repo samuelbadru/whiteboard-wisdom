@@ -14,9 +14,9 @@ export default function PageLayout({ children }: { children: ReactNode }) {
             priority
             src="/images/profile.png"
             className={utilStyles.borderCircle}
-            height={108}
-            width={108}
-            alt=""
+            height={220}
+            width={165}
+            alt="Profile"
           />
         </Link>
         <h2 className={utilStyles.headingLg}>
