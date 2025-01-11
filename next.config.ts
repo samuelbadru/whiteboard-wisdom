@@ -1,5 +1,5 @@
 import { NextConfig } from "next";
-// import withBundleAnalyzer from "@next/bundle-analyzer";
+import withBundleAnalyzer from "@next/bundle-analyzer";
 import { SITE_DOMAIN } from "./lib/constants";
 import createMDX from "@next/mdx";
 
@@ -25,9 +25,8 @@ const nextConfig: NextConfig = {
 
 const withMDX = createMDX({});
 
-// const withAnalyzer = withBundleAnalyzer({
-//   enabled: process.env.ANALYZE === "true",
-// });
+const withAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
 
-export default withMDX(nextConfig);
-// export withAnalyzer(nextConfig);
+module.exports = withMDX(withAnalyzer(nextConfig));
