@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { getAllPostIds } from "../lib/posts";
+import { getAllPostIds } from "../lib/post-list";
 import { SITE_DOMAIN } from "../lib/constants";
 
 function generateSiteMap(posts: { id: string }[]) {

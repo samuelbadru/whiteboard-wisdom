@@ -1,9 +1,11 @@
 import { NextConfig } from "next";
-import withBundleAnalyzer from "@next/bundle-analyzer";
+// import withBundleAnalyzer from "@next/bundle-analyzer";
 import { SITE_DOMAIN } from "./lib/constants";
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   async redirects() {
     return [
       {
@@ -21,8 +23,11 @@ const nextConfig: NextConfig = {
   },
 };
 
-const withAnalyzer = withBundleAnalyzer({
-  enabled: process.env.ANALYZE === "true",
-});
+const withMDX = createMDX({});
 
-export default withAnalyzer(nextConfig);
+// const withAnalyzer = withBundleAnalyzer({
+//   enabled: process.env.ANALYZE === "true",
+// });
+
+export default withMDX(nextConfig);
+// export withAnalyzer(nextConfig);
