@@ -1,11 +1,15 @@
-import { ReactNode } from "react";
 import Image from "next/image";
-import styles from "../../layout.module.css";
-import { siteTitle } from "../../../lib/constants";
+import styles from "../layout.module.css";
+import { siteTitle } from "../../lib/constants";
 import Link from "next/link";
-import utilStyles from "../../../styles/utils.module.css";
+import utilStyles from "../../styles/utils.module.css";
+import { ReactNode } from "react";
 
-export default function PageLayout({ children }: { children: ReactNode }) {
+export default async function PostLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <>
       <header className={styles.header}>
@@ -25,7 +29,9 @@ export default function PageLayout({ children }: { children: ReactNode }) {
           </Link>
         </h2>
       </header>
-      {children}
+      <article>
+        <div className={styles.postContent}>{children}</div>
+      </article>
       <div className={styles.backToHome}>
         <Link href="/">← Back to home</Link>
       </div>

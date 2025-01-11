@@ -1,9 +1,16 @@
----
-title: "My First Blog - Will You Be My First Reader?"
-date: "2025-01-08"
----
+import Image from "next/image";
+import Date from "../../../components/date";
+import utilStyles from "../../../styles/utils.module.css";
 
-![Hello Internet](/images/hello-internet.gif)
+export const metadata = {
+  title: "My First Blog - Will You Be My First Reader?",
+  date: "2025-01-08",
+};
+
+<h1 className={utilStyles.headingXl}>{metadata.title}</h1>
+<div className={utilStyles.lightText}>
+  <Date dateString={metadata.date} />
+</div>
 
 ## Does the internet need another blog?
 
