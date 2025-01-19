@@ -1,10 +1,11 @@
 import { format, parseISO } from "date-fns";
+import utilStyles from "../styles/utils.module.css";
 
-type DateProps = {
-  dateString: string;
-};
-
-export default function Date({ dateString }: DateProps) {
+export default function Date({ dateString }: { dateString: string }) {
   const date = parseISO(dateString);
-  return <time dateTime={dateString}>{format(date, "do LLLL yyyy")}</time>;
+  return (
+    <div className={utilStyles.lightText}>
+      <time dateTime={dateString}>{format(date, "do LLLL yyyy")}</time>
+    </div>
+  );
 }

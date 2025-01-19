@@ -1,10 +1,10 @@
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/post-list";
 import Link from "next/link";
-import Date from "../components/date";
 import styles from "./layout.module.css";
 import Image from "next/image";
 import { siteTitle } from "../lib/constants";
+import Date from "../components/Date";
 
 async function generateAllPostData() {
   return getSortedPostsData();

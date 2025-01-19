@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Date from "../../../components/date";
+import TitleDate from "../../../components/TitleDate";
 import utilStyles from "../../../styles/utils.module.css";
 
 export const metadata = {
@@ -7,10 +6,7 @@ export const metadata = {
   date: "2025-01-08",
 };
 
-<h1 className={utilStyles.headingXl}>{metadata.title}</h1>
-<div className={utilStyles.lightText}>
-  <Date dateString={metadata.date} />
-</div>
+<TitleDate titleString={metadata.title} dateString={metadata.date} />
 
 ## Does the internet need another blog?
 

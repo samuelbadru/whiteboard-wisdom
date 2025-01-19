@@ -29,4 +29,4 @@ const withAnalyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
 
-module.exports = withMDX(withAnalyzer(nextConfig));
+module.exports = withAnalyzer(withMDX(nextConfig));

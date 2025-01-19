@@ -30,9 +30,9 @@ export default async function PostLayout({
         </h2>
       </header>
       <article>
-        <div className={styles.postContent}>{children}</div>
+        <div>{children}</div>
       </article>
-      <div className={styles.backToHome}>
+      <div>
         <Link href="/">← Back to home</Link>
       </div>
     </>
